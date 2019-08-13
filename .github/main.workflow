@@ -40,7 +40,7 @@ action "Push ECR" {
 action "Deploy to EKS" {
   uses = "actions/aws/kubectl@master"
   #   args = ["get all"]
-  args = ["apply -f $GITHUB_WORKSPACE/kubernetes/deployment.yaml"]
+  args = ["apply -f $GITHUB_WORKSPACE/deployment.yaml"]
   needs = ["Push ECR"]
   secrets = [
     "KUBE_CONFIG_DATA",
